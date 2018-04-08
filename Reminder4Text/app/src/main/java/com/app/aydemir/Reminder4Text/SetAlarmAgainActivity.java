@@ -89,10 +89,6 @@ public class SetAlarmAgainActivity extends AppCompatActivity {
                 break;
         }
 
-
-
-
-
         if (buttonClickCount == 4) {
             Intent intent = new Intent(SetAlarmAgainActivity.this, SetAlarmAgain2Activity.class);
             intent.putExtra("MyClass", desk1);

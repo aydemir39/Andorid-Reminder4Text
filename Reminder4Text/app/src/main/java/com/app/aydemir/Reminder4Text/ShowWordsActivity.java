@@ -22,7 +22,6 @@ public class ShowWordsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_words);
         DeckToShow = (Deck) getIntent().getSerializableExtra("MyObjectToShowWords");
-        Log.v("gelen nesne:", "" + DeckToShow.getDeskName());
         buttonShowTheAnswer = findViewById(R.id.buttonShowTheAnswer);
         buttonNextWord = findViewById(R.id.buttonNextWord);
         buttonNextWord.setTransformationMethod(null);

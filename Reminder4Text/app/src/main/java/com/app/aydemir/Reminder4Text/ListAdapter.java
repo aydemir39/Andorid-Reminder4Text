@@ -18,12 +18,11 @@ import java.util.Collections;
  * Created by alican on 24.12.2017.
  */
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> {
-    Context context;
-    public static ArrayList<Deck> mDataList;
-    LayoutInflater inflater;
-    SharedPreferences.Editor editor;
-    Database database;
-
+    private Context context;
+    private ArrayList<Deck> mDataList;
+    private LayoutInflater inflater;
+    private SharedPreferences.Editor editor;
+    private Database database;
 
     public ListAdapter(Context context, ArrayList<Deck> data) {
         inflater = LayoutInflater.from(context);
@@ -43,7 +42,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        //holder.textViewRv.setText("" + mDataList.get(position).getDeskName());
         holder.textViewFront1.setText("" + mDataList.get(position).getArrayListFront().get(0));
         holder.textViewFront2.setText("" + mDataList.get(position).getArrayListFront().get(1));
         holder.textViewFront3.setText("" + mDataList.get(position).getArrayListFront().get(2));
@@ -57,12 +55,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
     }
 
     public void deleteItem(int position) {
-
-
         mDataList.remove(position);
         notifyItemRemoved(position);
         if (position == 0) {
-
             editor.putBoolean("myObjRepeatingTime", false);
             editor.apply();
         }
@@ -83,7 +78,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView textViewRv;
         TextView textViewFront1, textViewFront2, textViewFront3, textViewFront4;
         ImageView imageViewDelete, imageViewSetAlarm;
         int clickedItemPosition = 0;
@@ -102,11 +96,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
             imageViewDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(clickedItemPosition==0){alarm.cancelAlarm();}
 
+                    if(clickedItemPosition==0){alarm.cancelAlarm();}
                     database.deleteData(mDataList.get(clickedItemPosition));
                     deleteItem(clickedItemPosition);
-
                 }
             });
             linearClick.setOnClickListener(new View.OnClickListener() {

@@ -55,16 +55,16 @@ public class NewWordsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(NewWordsActivity.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         Intent intent = new Intent(NewWordsActivity.this, MainActivity.class);
-
         startActivity(intent);
+        finish();
     }
 
     public void buttonClickAdd() {
