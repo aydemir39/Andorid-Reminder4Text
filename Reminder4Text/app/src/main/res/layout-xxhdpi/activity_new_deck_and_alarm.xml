@@ -13,9 +13,10 @@
         android:id="@+id/toolbarNewDeckAlarm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#f06292"
+        android:background="@color/colorPrimary"
         android:elevation="10dp"
         android:minHeight="?attr/actionBarSize"
+        android:theme="@style/AppTheme.ActionBar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,6 +26,7 @@
 
     <Button
         android:id="@+id/buttonData"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textViewNumber"
@@ -33,6 +35,7 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/button_events"
         android:text="Set"
+        android:textColor="@drawable/button_text_color"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

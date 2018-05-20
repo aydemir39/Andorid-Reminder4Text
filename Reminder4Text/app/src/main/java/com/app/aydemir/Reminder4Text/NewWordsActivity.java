@@ -55,16 +55,18 @@ public class NewWordsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(NewWordsActivity.this, MainActivity.class);
                 startActivity(intent);
+                finish();
+                overridePendingTransition(R.anim.enter_from_left, R.anim.exit_to_right);
             }
         });
     }
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         Intent intent = new Intent(NewWordsActivity.this, MainActivity.class);
-
         startActivity(intent);
+        finish();
+        overridePendingTransition(R.anim.enter_from_left, R.anim.exit_to_right);
     }
 
     public void buttonClickAdd() {
@@ -72,7 +74,7 @@ public class NewWordsActivity extends AppCompatActivity {
         sample2.add(String.valueOf(editText2.getText()));
         desk1.setArrayListFront(sample1);
         desk1.setArrayListBack(sample2);
-        if(buttonClickCount==4){scrollNewWords.setVisibility(View.INVISIBLE);}
+      // if(buttonClickCount==4){scrollNewWords.setVisibility(View.INVISIBLE);}
         buttonClickCount++;
         editText1.setText("");
         editText2.setText("");
@@ -80,13 +82,11 @@ public class NewWordsActivity extends AppCompatActivity {
             Intent intent = new Intent(NewWordsActivity.this, NewDeckAndAlarmActivity.class);
             intent.putExtra("MyClass", desk1);
             startActivity(intent);
+            overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
         }
     }
 
     private boolean isEmpty(EditText etText) {
-        if (etText.getText().toString().trim().length() > 0)
-            return false;
-
-        return true;
+        return etText.getText().toString().trim().length() <= 0;
     }
 }

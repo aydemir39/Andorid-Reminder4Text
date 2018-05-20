@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AlarmMenager.iml" filepath="$PROJECT_DIR$/AlarmMenager.iml" />
+      <module fileurl="file://C:\Users\ACER\AndroidStudioProjects\Reminder4Text\AlarmMenager.iml" filepath="C:\Users\ACER\AndroidStudioProjects\Reminder4Text\AlarmMenager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Reminder4Text.iml" filepath="$PROJECT_DIR$/Reminder4Text.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

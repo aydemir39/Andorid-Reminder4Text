@@ -3,10 +3,6 @@ package com.app.aydemir.Reminder4Text;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-/**
- * Created by alican on 24.12.2017.
- */
-
 public class Deck implements Serializable{
     private int id;
     private String deskName;

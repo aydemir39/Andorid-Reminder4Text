@@ -7,5 +7,5 @@
         android:state_focused="true"
         android:color="@color/colorAccent" />
     <item
-        android:color="#FF424242" /> <!--unselected text colour-->
+        android:color="@color/colorAccent" /> <!--unselected text colour-->
 </selector>

@@ -1,10 +1,9 @@
 package com.app.aydemir.Reminder4Text;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -22,7 +21,6 @@ public class ShowWordsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_words);
         DeckToShow = (Deck) getIntent().getSerializableExtra("MyObjectToShowWords");
-        Log.v("gelen nesne:", "" + DeckToShow.getDeskName());
         buttonShowTheAnswer = findViewById(R.id.buttonShowTheAnswer);
         buttonNextWord = findViewById(R.id.buttonNextWord);
         buttonNextWord.setTransformationMethod(null);
@@ -47,6 +45,7 @@ public class ShowWordsActivity extends AppCompatActivity {
                     textViewFront.setText("");
                     Intent intent = new Intent(ShowWordsActivity.this, ListActivity.class);
                     startActivity(intent);
+                    overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
                 }
                 showFrontWord(page);
                 buttonNextWord.setVisibility(View.GONE);
@@ -59,8 +58,16 @@ public class ShowWordsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(ShowWordsActivity.this,ListActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.enter_from_left, R.anim.exit_to_right);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent=new Intent(ShowWordsActivity.this,ListActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.enter_from_left, R.anim.exit_to_right);
     }
 
     public void showFrontWord(int page) {

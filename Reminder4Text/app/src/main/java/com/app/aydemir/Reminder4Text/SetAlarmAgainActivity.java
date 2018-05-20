@@ -55,15 +55,17 @@ public class SetAlarmAgainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SetAlarmAgainActivity.this, MainActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.enter_from_left, R.anim.exit_to_right);
+
             }
         });
     }
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         Intent intent = new Intent(SetAlarmAgainActivity.this, MainActivity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.enter_from_left, R.anim.exit_to_right);
     }
 
     public void buttonClickAdd() {
@@ -89,22 +91,16 @@ public class SetAlarmAgainActivity extends AppCompatActivity {
                 break;
         }
 
-
-
-
-
         if (buttonClickCount == 4) {
             Intent intent = new Intent(SetAlarmAgainActivity.this, SetAlarmAgain2Activity.class);
             intent.putExtra("MyClass", desk1);
             intent.putExtra("MyObjectToSetAlarmAgain", Deck2);
             startActivity(intent);
+            overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
         }
     }
 
     private boolean isEmpty(EditText etText) {
-        if (etText.getText().toString().trim().length() > 0)
-            return false;
-
-        return true;
+        return etText.getText().toString().trim().length() <= 0;
     }
 }

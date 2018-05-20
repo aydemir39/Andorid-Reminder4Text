@@ -11,8 +11,9 @@
         android:id="@+id/toolbarNewWords"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#f06292"
+        android:background="@color/colorPrimary"
         android:elevation="10dp"
+        android:theme="@style/AppTheme.ActionBar"
         android:minHeight="?attr/actionBarSize"
         app:navigationIcon="?attr/actionModeCloseDrawable">
 
@@ -39,8 +40,6 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/textInputLayout"
                 android:layout_marginTop="40dp">
 
                 <EditText
@@ -75,12 +74,11 @@
             <Button
                 android:id="@+id/button2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true"
+                android:layout_height="50dp"
                 android:layout_marginTop="120dp"
                 android:background="@drawable/button_events"
-                android:text="@string/button_add"
+                style="?android:attr/borderlessButtonStyle"
+                android:text="Add"
                 android:textColor="@drawable/button_text_color"
                 android:textSize="18sp"
                 app:layout_constraintLeft_toLeftOf="parent"

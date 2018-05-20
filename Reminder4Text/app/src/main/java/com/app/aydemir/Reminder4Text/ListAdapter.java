@@ -1,5 +1,6 @@
 package com.app.aydemir.Reminder4Text;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,17 +19,16 @@ import java.util.Collections;
  * Created by alican on 24.12.2017.
  */
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> {
-    Context context;
-    public static ArrayList<Deck> mDataList;
-    LayoutInflater inflater;
-    SharedPreferences.Editor editor;
-    Database database;
-
+    private Activity context;
+    private ArrayList<Deck> mDataList;
+    private LayoutInflater inflater;
+    private SharedPreferences.Editor editor;
+    private Database database;
 
     public ListAdapter(Context context, ArrayList<Deck> data) {
         inflater = LayoutInflater.from(context);
         this.mDataList = data;
-        this.context = context;
+        this.context = (Activity) context;
         Collections.reverse(this.mDataList);
         editor = context.getSharedPreferences("myTimePicked", context.MODE_PRIVATE).edit();
         database = new Database(context);
@@ -43,7 +43,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        //holder.textViewRv.setText("" + mDataList.get(position).getDeskName());
         holder.textViewFront1.setText("" + mDataList.get(position).getArrayListFront().get(0));
         holder.textViewFront2.setText("" + mDataList.get(position).getArrayListFront().get(1));
         holder.textViewFront3.setText("" + mDataList.get(position).getArrayListFront().get(2));
@@ -57,12 +56,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
     }
 
     public void deleteItem(int position) {
-
-
         mDataList.remove(position);
         notifyItemRemoved(position);
         if (position == 0) {
-
             editor.putBoolean("myObjRepeatingTime", false);
             editor.apply();
         }
@@ -73,17 +69,19 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
         Intent intent = new Intent(context, ShowWordsActivity.class);
         intent.putExtra("MyObjectToShowWords", mDataList.get(position));
         context.startActivity(intent);
+        context.overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
+
     }
 
     public void ShowSetAlarmAgain(int position) {
         Intent intent = new Intent(context, SetAlarmAgainActivity.class);
         intent.putExtra("MyObjectToSetAlarmAgain", mDataList.get(position));
-        deleteItem(position);
         context.startActivity(intent);
+        context.overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
+      //  deleteItem(position);
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView textViewRv;
         TextView textViewFront1, textViewFront2, textViewFront3, textViewFront4;
         ImageView imageViewDelete, imageViewSetAlarm;
         int clickedItemPosition = 0;
@@ -102,11 +100,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
             imageViewDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(clickedItemPosition==0){alarm.cancelAlarm();}
 
+                    if(clickedItemPosition==0){alarm.cancelAlarm();}
                     database.deleteData(mDataList.get(clickedItemPosition));
                     deleteItem(clickedItemPosition);
-
                 }
             });
             linearClick.setOnClickListener(new View.OnClickListener() {
@@ -123,5 +120,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
                 }
             });
         }
+    }
+
+    @Override
+    public void onViewDetachedFromWindow(MyViewHolder holder) {
+        super.onViewDetachedFromWindow(holder);
+
     }
 }

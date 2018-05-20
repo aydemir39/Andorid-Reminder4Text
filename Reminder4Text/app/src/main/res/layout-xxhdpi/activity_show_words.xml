@@ -11,8 +11,9 @@
         android:id="@+id/toolbarShowWords"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#f06292"
+        android:background="@color/colorPrimary"
         android:elevation="10dp"
+        android:theme="@style/AppTheme.ActionBar"
         android:minHeight="?attr/actionBarSize"
         app:navigationIcon="?attr/actionModeCloseDrawable">
 
@@ -99,6 +100,7 @@
             android:layout_marginStart="20dp"
             android:background="@drawable/button_events"
             android:text="Next Text"
+            style="?android:attr/borderlessButtonStyle"
             android:textColor="@drawable/button_text_color"
             android:textSize="18sp"
             android:visibility="invisible"
@@ -112,6 +114,7 @@
         <Button
             android:id="@+id/buttonShowTheAnswer"
             android:layout_width="match_parent"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_height="match_parent"
             android:layout_marginEnd="20dp"
             android:layout_marginStart="20dp"
