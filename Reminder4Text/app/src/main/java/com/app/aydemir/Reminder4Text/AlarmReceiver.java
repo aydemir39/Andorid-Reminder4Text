@@ -19,7 +19,11 @@ public class AlarmReceiver extends BroadcastReceiver {
             editor.putInt("alarmCount", alarmCount - 1);
             editor.apply();
             NotificationCall notificationCall = new NotificationCall(context);
+<<<<<<< HEAD
             notificationCall.NotificationCallme();
+=======
+            notificationCall.NotificationCall();
+>>>>>>> e0537c0e4e1329ed3c8e231e43b2402b433c51ca
             if (alarmCount == 1) {
                 alarm.cancelAlarm();
                 SharedPreferences.Editor editor2 = context.getSharedPreferences("myTimePicked", Context.MODE_PRIVATE).edit();

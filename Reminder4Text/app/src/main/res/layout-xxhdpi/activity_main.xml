@@ -69,6 +69,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+<<<<<<< HEAD
                         android:orientation="horizontal">
 
                         <TextView
@@ -78,12 +79,21 @@
                             android:layout_toLeftOf="@+id/imageViewDataRemove"
                             android:gravity="center"
                             android:textSize="20sp" />
+=======
+                        android:orientation="horizontal"
+                        android:weightSum="1.3">
+>>>>>>> e0537c0e4e1329ed3c8e231e43b2402b433c51ca
 
                         <TextView
                             android:id="@+id/textView1Name"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+<<<<<<< HEAD
                             android:layout_toStartOf="@+id/textViewChangedNumber"
+=======
+                            android:layout_toStartOf="@+id/imageViewDataRemove"
+                            android:layout_weight="0.3"
+>>>>>>> e0537c0e4e1329ed3c8e231e43b2402b433c51ca
                             android:gravity="left|center"
                             android:text="Current Deck"
                             android:textSize="22sp"
@@ -92,9 +102,16 @@
                         <ImageView
                             android:id="@+id/imageViewDataRemove"
                             android:layout_width="30dp"
+<<<<<<< HEAD
                             android:layout_height="match_parent"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentTop="true"
+=======
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_weight="1"
+>>>>>>> e0537c0e4e1329ed3c8e231e43b2402b433c51ca
                             android:padding="2dp"
                             app:srcCompat="@drawable/ic_launcher" />
                     </RelativeLayout>

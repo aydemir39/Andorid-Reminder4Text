@@ -20,7 +20,11 @@ public class NotificationCall {
 
     String id = "main_channel";
 
+<<<<<<< HEAD
     public void NotificationCallme() {
+=======
+    public void NotificationCall() {
+>>>>>>> e0537c0e4e1329ed3c8e231e43b2402b433c51ca
         if (notifManager == null) {
             notifManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         }

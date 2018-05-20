@@ -19,7 +19,11 @@ import java.util.Collections;
  * Created by alican on 24.12.2017.
  */
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> {
+<<<<<<< HEAD
     private Activity context;
+=======
+    private Context context;
+>>>>>>> e0537c0e4e1329ed3c8e231e43b2402b433c51ca
     private ArrayList<Deck> mDataList;
     private LayoutInflater inflater;
     private SharedPreferences.Editor editor;

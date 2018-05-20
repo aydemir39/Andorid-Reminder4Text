@@ -56,7 +56,10 @@ public class NewWordsActivity extends AppCompatActivity {
                 Intent intent = new Intent(NewWordsActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
+<<<<<<< HEAD
                 overridePendingTransition(R.anim.enter_from_left, R.anim.exit_to_right);
+=======
+>>>>>>> e0537c0e4e1329ed3c8e231e43b2402b433c51ca
             }
         });
     }
@@ -66,7 +69,10 @@ public class NewWordsActivity extends AppCompatActivity {
         Intent intent = new Intent(NewWordsActivity.this, MainActivity.class);
         startActivity(intent);
         finish();
+<<<<<<< HEAD
         overridePendingTransition(R.anim.enter_from_left, R.anim.exit_to_right);
+=======
+>>>>>>> e0537c0e4e1329ed3c8e231e43b2402b433c51ca
     }
 
     public void buttonClickAdd() {

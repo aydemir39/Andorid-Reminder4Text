@@ -30,7 +30,11 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     TextView  textView1Front1, textView1Front2, textView1Front3, textView1Front4;
     LinearLayout  linearLayoutNull;
     CardView linearLayoutData;
+<<<<<<< HEAD
     SharedPreferences prefs,prefNumberRepeat;
+=======
+    SharedPreferences prefs;
+>>>>>>> e0537c0e4e1329ed3c8e231e43b2402b433c51ca
     ImageView imageViewDataRemove;
     Toolbar toolbar;
     boolean doubleBackToExitPressedOnce=false;
@@ -190,14 +194,20 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         Intent intent = new Intent(getApplicationContext(), ListActivity.class);
         startActivity(intent);
         finish();
+<<<<<<< HEAD
         overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
+=======
+>>>>>>> e0537c0e4e1329ed3c8e231e43b2402b433c51ca
     }
 
     public void fabClicNew(View view) {
         Intent intent = new Intent(getApplicationContext(), NewWordsActivity.class);
         startActivity(intent);
         finish();
+<<<<<<< HEAD
         overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
+=======
+>>>>>>> e0537c0e4e1329ed3c8e231e43b2402b433c51ca
     }
 
     @Override

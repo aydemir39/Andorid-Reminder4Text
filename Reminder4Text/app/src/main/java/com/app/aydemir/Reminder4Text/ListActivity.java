@@ -37,7 +37,10 @@ public class ListActivity extends AppCompatActivity {
                 Intent intent=new Intent(ListActivity.this,MainActivity.class);
                 startActivity(intent);
                 finish();
+<<<<<<< HEAD
                 overridePendingTransition(R.anim.enter_from_left, R.anim.exit_to_right);
+=======
+>>>>>>> e0537c0e4e1329ed3c8e231e43b2402b433c51ca
             }
         });
     }
@@ -47,6 +50,10 @@ public class ListActivity extends AppCompatActivity {
         Intent intent=new Intent(ListActivity.this,MainActivity.class);
         startActivity(intent);
         finish();
+<<<<<<< HEAD
         overridePendingTransition(R.anim.enter_from_left, R.anim.exit_to_right);
+=======
+        //overridePendingTransition(R,R.anim.splashfadeout);
+>>>>>>> e0537c0e4e1329ed3c8e231e43b2402b433c51ca
     }
 }

@@ -13,7 +13,10 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:elevation="10dp"
+<<<<<<< HEAD
 
+=======
+>>>>>>> e0537c0e4e1329ed3c8e231e43b2402b433c51ca
         android:theme="@style/AppTheme.ActionBar"
         android:minHeight="?attr/actionBarSize"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -33,7 +36,10 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/button_events"
         android:text="Set"
+<<<<<<< HEAD
         android:textColor="@drawable/button_text_color"
+=======
+>>>>>>> e0537c0e4e1329ed3c8e231e43b2402b433c51ca
         style="?android:attr/borderlessButtonStyle"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
